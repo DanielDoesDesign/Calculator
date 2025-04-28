@@ -1,0 +1,44 @@
+#deps
+
+set(CMAKE_PREFIX_PATH ${CMAKE_BINARY_DIR}/_deps/)
+
+#set(SFML_DIR $<0:>${CMAKE_BINARY_DIR}/_deps/sfml-build)
+
+find_package(SFML 3.0.0 CONFIG COMPONENTS System Graphics)
+#set(SFML_USE_STATIC_LIBS OFF)
+#find_package(SFML 3 REQUIRED COMPONENTS Main)
+
+
+if(SFML_POPULATED)
+	message ("SFML populated!")
+endif()
+
+if(SFML_GRAPHICS_FOUND)
+	message ("Graphics found!")
+endif()
+
+
+
+	
+message ("Downloading SFML!")
+include(FetchContent)
+FetchContent_Declare(SFML
+	GIT_REPOSITORY https://github.com/SFML/SFML.git
+	GIT_TAG 3.0.0
+	GIT_SHALLOW ON
+	EXCLUDE_FROM_ALL
+	SYSTEM
+	#SOURCE_DIR ${CMAKE_BINARY_DIR}/SFML/
+	)
+
+	#set(SFML_BUILD_SHARED ON CACHE BOOL "" FORCE)  # Ensure shared build
+
+
+message ("Setting SFML Audio/Network Dependenys OFF!")
+set(SFML_BUILD_AUDIO OFF)
+set(SFML_BUILD_NETWORK OFF)
+#set(SFML_USE_SYSTEM_DEPS ON)
+
+
+FetchContent_MakeAvailable(SFML)
+
