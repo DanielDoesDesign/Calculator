@@ -13,9 +13,9 @@ endif()
 
 
 cmake_minimum_required(VERSION 3.31.5)
-project(DanGame LANGUAGES CXX)
+project(Calculator LANGUAGES CXX)
 
-include(GetSFML.txt)
+#include(GetSFML.txt)
 
 
 #CheckIncludeFile
@@ -49,22 +49,19 @@ add_executable(${PROJECT_NAME} ${sources} ${headers} ${inlines})
 #add_subdirectory(src)
 
 target_include_directories(${PROJECT_NAME} PRIVATE
-#    ${CMAKE_CURRENT_SOURCE_DIR}/src
-	${CMAKE_CURRENT_SOURCE_DIR}/src/core
-	${CMAKE_CURRENT_SOURCE_DIR}/src/states
-	${CMAKE_CURRENT_SOURCE_DIR}/src/game
-	${CMAKE_CURRENT_SOURCE_DIR}/src/ui
-#    ${CMAKE_CURRENT_SOURCE_DIR}/include
-	${CMAKE_CURRENT_SOURCE_DIR}/include/core
-	${CMAKE_CURRENT_SOURCE_DIR}/include/states
-	${CMAKE_CURRENT_SOURCE_DIR}/include/game
-	${CMAKE_CURRENT_SOURCE_DIR}/include/ui
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 #copy media file from source dir to build dir
-file(COPY ${CMAKE_SOURCE_DIR}/Media DESTINATION ${CMAKE_BINARY_DIR}/bin)
+#file(COPY ${CMAKE_SOURCE_DIR}/Media DESTINATION ${CMAKE_BINARY_DIR}/bin)
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
 #link the different libraries into the executable
-target_link_libraries(${PROJECT_NAME} PRIVATE SFML::System SFML::Graphics)
+#target_link_libraries(${PROJECT_NAME} PRIVATE)
+
+
+
+
+#target_link_libraries(${PROJECT_NAME} PRIVATE SFML::System SFML::Graphics)
 
