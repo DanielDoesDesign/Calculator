@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        //linux
+        {
+            "type": "cppdbg",
+            "request": "launch",
+            "name": "Linux",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "cwd": "${workspaceFolder}/Targets/Debug/bin",
+            "program": "${workspaceFolder}/Targets/Debug/bin/",
+        },
+        //windows
+        {
+            "type": "cppvsdbg",
+            "request": "launch",
+            "name": "Windows",
+            "cwd": "${workspaceFolder}/Targets/Debug/bin",
+            "program": "DanGame.exe",
+            "console": "integratedTerminal",
+        },
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "includePath": [
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/include/",
+                "${workspaceFolder}/Targets/Debug/_deps/sfml-src/include/"
+            ],
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "defines": [],
+            "intelliSenseMode": "${default}",
+            "cppStandard": "c++17",
+            "cStandard": "c17",
+            "name": "cpp-dev"
+        }
+    ],
+    "version": 4
+}
