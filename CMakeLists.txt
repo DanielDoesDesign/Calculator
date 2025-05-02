@@ -15,7 +15,7 @@ endif()
 cmake_minimum_required(VERSION 3.31.5)
 project(Calculator LANGUAGES CXX)
 
-#include(GetSFML.txt)
+include(GetSFML.txt)
 
 
 #CheckIncludeFile
@@ -51,17 +51,11 @@ add_executable(${PROJECT_NAME} ${sources} ${headers} ${inlines})
 target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_CURRENT_SOURCE_DIR}/include
+
 )
-#copy media file from source dir to build dir
-#file(COPY ${CMAKE_SOURCE_DIR}/Media DESTINATION ${CMAKE_BINARY_DIR}/bin)
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
 #link the different libraries into the executable
-#target_link_libraries(${PROJECT_NAME} PRIVATE)
-
-
-
-
-#target_link_libraries(${PROJECT_NAME} PRIVATE SFML::System SFML::Graphics)
+target_link_libraries(${PROJECT_NAME} PRIVATE SFML::System SFML::Graphics)
 
